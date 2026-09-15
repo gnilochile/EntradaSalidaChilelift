@@ -7,7 +7,7 @@
 <title>Control de Acceso — Chilelift</title>
 <style>
 :root{--bg:#141B20;--panel:#1D272E;--panel-2:#25323B;--line:#33434E;
-  --ink:#EAF1F4;--muted:#8298A5;--entra:#C9F04A;--sale:#FFA23A;--alert:#FF6A57;--note:#6EC5FF}
+  --ink:#EAF1F4;--muted:#A6B7C2;--entra:#C9F04A;--sale:#FFA23A;--alert:#FF6A57;--note:#6EC5FF}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--ink);
   font-family:system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -455,6 +455,26 @@ function hora() {
   return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
 }
 
+// ---------- RUN chileno ----------
+function dvRun(cuerpo) {
+  var suma = 0, mult = 2;
+  for (var i = cuerpo.length - 1; i >= 0; i--) {
+    suma += parseInt(cuerpo.charAt(i), 10) * mult;
+    mult = (mult === 7) ? 2 : mult + 1;
+  }
+  var resto = 11 - (suma % 11);
+  return resto === 11 ? '0' : resto === 10 ? 'K' : String(resto);
+}
+function limpiaRun(v) {
+  var s = String(v || '').replace(/[.\s]/g, '').toUpperCase();
+  var m = s.match(/^(\d{7,8})-?([0-9K])$/);
+  return m ? m[1] + '-' + m[2] : null;
+}
+function runValido(v) {
+  var run = limpiaRun(v);
+  return !!run && dvRun(run.split('-')[0]) === run.split('-')[1];
+}
+
 // ---------- cámara ----------
 $('camBtn').onclick = function () {
   if (stream) { apaga(); return; }
@@ -634,6 +654,14 @@ $('saveBtn').onclick = function () {
   var nom = cur.nombre || $('f-name').value.trim();
   if (!nom) { $('f-name').focus(); $('f-name').style.borderColor = '#FF6A57'; return; }
   var run = cur.run || ($('f-run') ? $('f-run').value.trim() : '');
+
+  if ($('manualRun').style.display === 'block') {
+    if (!runValido(run)) {
+      $('f-run').focus(); $('f-run').style.borderColor = '#FF6A57';
+      return;
+    }
+    run = limpiaRun(run);
+  }
 
   var d = {
     run: run, nombre: nom, tipo: cur.tipo || $('f-type').value,
