@@ -11,16 +11,16 @@
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--ink);
   font-family:system-ui,-apple-system,'Segoe UI',sans-serif;
-  font-size:16px;
+  font-size:18.5px;
   height:100vh;      /* respaldo para navegadores sin dvh */
   height:100dvh;
   overflow:hidden;display:flex;flex-direction:column}
 .bar{display:flex;align-items:center;justify-content:space-between;
   padding:13px 16px;border-bottom:1px solid var(--line);background:var(--panel);flex:none}
-.mark{font-size:14px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.mark{font-size:16px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 .mark span{color:var(--entra)}
-.shift{text-align:right;font-size:10px;line-height:1.3;color:var(--muted)}
-.shift b{display:block;color:var(--ink);font-size:11.5px}
+.shift{text-align:right;font-size:11.5px;line-height:1.3;color:var(--muted)}
+.shift b{display:block;color:var(--ink);font-size:13px}
 .screen{padding:16px 16px 0;flex:1 1 auto;display:none;flex-direction:column;
   overflow-y:auto;-webkit-overflow-scrolling:touch;min-height:0}
 .screen.on{display:flex}
@@ -28,16 +28,16 @@ body{background:var(--bg);color:var(--ink);
    se desplaza. Sin esto una tarjeta con overflow:hidden recorta su
    contenido y deja botones inalcanzables. */
 .screen > *{flex-shrink:0}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:10.5px;
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:12px;
   color:var(--muted);font-weight:600;margin-bottom:6px}
-h2{font-size:23px;font-weight:600;line-height:1.15;margin-bottom:14px}
+h2{font-size:26.5px;font-weight:600;line-height:1.15;margin-bottom:14px}
 .guards{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
 .guard{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid var(--line);
   border-radius:14px;background:var(--panel);width:100%;color:var(--ink);
-  font-family:inherit;font-size:15px;text-align:left}
+  font-family:inherit;font-size:17.5px;text-align:left}
 .guard[aria-pressed="true"]{border-color:var(--entra);background:var(--panel-2)}
 .ini{width:32px;height:32px;flex:none;border-radius:9px;background:var(--panel-2);
-  border:1px solid var(--line);display:grid;place-items:center;font-size:13px;
+  border:1px solid var(--line);display:grid;place-items:center;font-size:15px;
   font-weight:700;color:var(--muted)}
 .guard[aria-pressed="true"] .ini{background:var(--entra);color:#141B20;border-color:var(--entra)}
 .pindots{display:flex;gap:9px;justify-content:center;margin:4px 0 14px}
@@ -45,8 +45,8 @@ h2{font-size:23px;font-weight:600;line-height:1.15;margin-bottom:14px}
 .pindot.f{background:var(--entra);border-color:var(--entra)}
 .pad{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .key{padding:13px 0;border-radius:11px;border:1px solid var(--line);
-  background:var(--panel);color:var(--ink);font-size:19px;font-variant-numeric:tabular-nums}
-.key.ghost{border-color:transparent;background:transparent;font-size:13px;color:var(--muted)}
+  background:var(--panel);color:var(--ink);font-size:22px;font-variant-numeric:tabular-nums}
+.key.ghost{border-color:transparent;background:transparent;font-size:15px;color:var(--muted)}
 .pinwrap.bad{animation:shake .3s}
 @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
 #stage{position:relative;background:#000;border-radius:16px;overflow:hidden;
@@ -56,98 +56,98 @@ canvas{display:none}
 .frame{position:absolute;inset:16% 12%;border:2px solid var(--entra);border-radius:10px;
   box-shadow:0 0 0 100vmax rgba(0,0,0,.3);pointer-events:none}
 .frame span{position:absolute;bottom:-25px;left:0;right:0;text-align:center;
-  font-size:11px;color:var(--entra)}
+  font-size:12.5px;color:var(--entra)}
 .dir{border-radius:18px;padding:16px;margin-bottom:12px;border:1px solid var(--line);
   background:var(--panel);position:relative;overflow:hidden}
 .dir::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--entra)}
 .dir.out::before{background:var(--sale)}
 .dirtop{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.arrow{font-size:38px;line-height:.85;color:var(--entra);font-weight:700}
+.arrow{font-size:43.5px;line-height:.85;color:var(--entra);font-weight:700}
 .dir.out .arrow{color:var(--sale)}
-.dirword{font-size:26px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
-.dirsub{font-size:11px;color:var(--muted);margin-top:2px}
+.dirword{font-size:30px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.dirsub{font-size:12.5px;color:var(--muted);margin-top:2px}
 .flip{margin-left:auto;padding:9px 12px;border-radius:9px;border:1px solid var(--line);
-  background:transparent;color:var(--muted);font-family:inherit;font-size:12px;flex:none}
-.who{font-size:21px;font-weight:600;line-height:1.2}
+  background:transparent;color:var(--muted);font-family:inherit;font-size:14px;flex:none}
+.who{font-size:24px;font-weight:600;line-height:1.2}
 .rows{border-top:1px solid var(--line);margin-top:12px;padding-top:10px;
   display:flex;flex-direction:column;gap:7px}
-.row{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.row{display:flex;justify-content:space-between;gap:12px;font-size:16px}
 .row dt{color:var(--muted)}
 .row dd{font-variant-numeric:tabular-nums;text-align:right}
-.tag{display:inline-block;padding:2px 7px;border-radius:5px;font-size:10px;
+.tag{display:inline-block;padding:2px 7px;border-radius:5px;font-size:11.5px;
   letter-spacing:.08em;text-transform:uppercase;font-weight:600;
   border:1px solid var(--line);color:var(--muted)}
 .tag.auto{border-color:var(--entra);color:var(--entra)}
 .tag.man{border-color:var(--alert);color:var(--alert)}
 .nota{background:rgba(110,197,255,.09);border:1px solid rgba(110,197,255,.4);
-  border-radius:12px;padding:12px;margin-bottom:12px;font-size:13.5px;
+  border-radius:12px;padding:12px;margin-bottom:12px;font-size:15.5px;
   line-height:1.5;color:#CFE9FF}
-.nota .k{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+.nota .k{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--note);margin-bottom:5px;font-weight:600}
-.nota .exp{display:block;margin-top:7px;font-size:11px;color:var(--note);opacity:.85}
+.nota .exp{display:block;margin-top:7px;font-size:12.5px;color:var(--note);opacity:.85}
 .nota.vencida{background:rgba(255,106,87,.08);border-color:rgba(255,106,87,.4);color:#FFC5BB}
 .nota.vencida .k{color:var(--alert)}
-label{display:block;font-size:13px;color:var(--muted);margin:14px 0 6px}
+label{display:block;font-size:15px;color:var(--muted);margin:14px 0 6px}
 input,select{width:100%;padding:15px 13px;border-radius:11px;border:1px solid var(--line);
-  background:var(--panel);color:var(--ink);font-family:inherit;font-size:17px}
+  background:var(--panel);color:var(--ink);font-family:inherit;font-size:19.5px}
 input::placeholder{color:#5C707C}
-.hint{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.5}
+.hint{font-size:14.5px;color:var(--muted);margin-top:6px;line-height:1.5}
 /* Sin position:sticky: en los Chrome viejos de los teléfonos de los
    guardias dejaba los botones fuera de alcance. */
 .actions{margin-top:auto;padding:16px 0 20px;display:flex;flex-direction:column;gap:9px}
 .btn{padding:16px;border-radius:13px;border:0;width:100%;font-family:inherit;
-  font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;
+  font-size:18.5px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;
   background:var(--entra);color:#141B20}
 .btn.out{background:var(--sale)}
 .btn.sec{background:transparent;border:1px solid var(--line);color:var(--muted);
-  font-size:14px;letter-spacing:.04em;text-transform:none}
+  font-size:16px;letter-spacing:.04em;text-transform:none}
 .btn:disabled{background:var(--panel-2);color:#5C707C}
 .tick{width:62px;height:62px;border-radius:50%;background:var(--entra);color:#141B20;
-  display:grid;place-items:center;font-size:31px;margin:24px auto 12px;font-weight:700}
+  display:grid;place-items:center;font-size:35.5px;margin:24px auto 12px;font-weight:700}
 .tick.out{background:var(--sale)}
-.savedname{text-align:center;font-size:23px;font-weight:600}
-.savedmeta{text-align:center;color:var(--muted);font-size:12.5px;margin-top:3px}
+.savedname{text-align:center;font-size:26.5px;font-weight:600}
+.savedmeta{text-align:center;color:var(--muted);font-size:14.5px;margin-top:3px}
 .log{display:flex;flex-direction:column;gap:7px}
 .entry{display:flex;align-items:center;gap:10px;padding:12px;background:var(--panel);
-  border:1px solid var(--line);border-radius:11px;border-left:3px solid var(--entra);font-size:14px}
+  border:1px solid var(--line);border-radius:11px;border-left:3px solid var(--entra);font-size:16px}
 .entry.out{border-left-color:var(--sale)}
 .entry.flag{border-left-color:var(--alert)}
-.entry time{color:var(--muted);font-size:11.5px;font-variant-numeric:tabular-nums}
+.entry time{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
 .entry .n{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .warn{background:rgba(255,106,87,.09);border:1px solid rgba(255,106,87,.35);
-  border-radius:12px;padding:13px;font-size:12.5px;line-height:1.5;
+  border-radius:12px;padding:13px;font-size:14.5px;line-height:1.5;
   margin-bottom:12px;color:#FFC5BB}
-.warn b{color:var(--alert);display:block;font-size:13.5px;letter-spacing:.04em;
+.warn b{color:var(--alert);display:block;font-size:15.5px;letter-spacing:.04em;
   text-transform:uppercase;margin-bottom:4px}
 .task{border:1px solid var(--line);border-radius:13px;background:var(--panel);
   padding:14px;margin-bottom:9px}
 .task.hecha{border-color:var(--entra);background:rgba(201,240,74,.07)}
 .task.nohecha{border-color:var(--alert);background:rgba(255,106,87,.06)}
-.task b{display:block;font-size:16px;line-height:1.3;margin-bottom:3px}
-.task .det{font-size:13.5px;color:var(--muted);line-height:1.45}
-.task .meta{font-size:12px;color:var(--muted);margin-top:7px}
+.task b{display:block;font-size:18.5px;line-height:1.3;margin-bottom:3px}
+.task .det{font-size:15.5px;color:var(--muted);line-height:1.45}
+.task .meta{font-size:14px;color:var(--muted);margin-top:7px}
 .task .ok{color:var(--entra)}
 .task .no{color:var(--alert)}
-.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;
+.pill{display:inline-block;font-size:12.5px;padding:2px 8px;border-radius:20px;
   border:1px solid var(--sale);color:var(--sale);margin-top:6px}
-.hora{display:inline-block;font-size:13px;padding:3px 10px;border-radius:20px;
+.hora{display:inline-block;font-size:15px;padding:3px 10px;border-radius:20px;
   background:var(--panel-2);border:1px solid var(--line);color:var(--ink);
   font-variant-numeric:tabular-nums;margin-top:6px;margin-right:6px}
 .hora b{font-weight:700;color:var(--sale)}
 .taskbtns{display:flex;gap:8px;margin-top:11px}
-.taskbtns .btn{margin:0;font-size:14px;padding:13px 8px}
+.taskbtns .btn{margin:0;font-size:16px;padding:13px 8px}
 .cuenta{display:inline-block;background:var(--sale);color:#141B20;border-radius:20px;
-  padding:1px 9px;font-size:13px;font-weight:700;margin-left:7px}
+  padding:1px 9px;font-size:15px;font-weight:700;margin-left:7px}
 .fotobox{margin-top:11px;border:1px dashed var(--line);border-radius:12px;
-  padding:13px;text-align:center;color:var(--muted);font-size:13px}
+  padding:13px;text-align:center;color:var(--muted);font-size:15px}
 .fotobox img{max-width:100%;border-radius:9px;margin-top:8px;display:block}
 .urg{display:flex;align-items:center;gap:10px;margin-top:14px;padding:13px;
   border:1px solid var(--alert);border-radius:12px;background:rgba(255,106,87,.07);
-  font-size:14.5px;color:#FFC5BB}
+  font-size:16.5px;color:#FFC5BB}
 .urg input{width:22px;height:22px;flex:none;margin:0}
-.firma{text-align:center;font-size:8px;color:#3C4A54;padding:10px 0 4px;letter-spacing:.06em}
+.firma{text-align:center;font-size:9px;color:#3C4A54;padding:10px 0 4px;letter-spacing:.06em}
 .pend{position:fixed;bottom:0;left:0;right:0;background:var(--sale);color:#141B20;
-  text-align:center;padding:7px;font-size:12px;font-weight:600;display:none;z-index:9}
+  text-align:center;padding:7px;font-size:14px;font-weight:600;display:none;z-index:9}
 .pend.on{display:block}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -936,7 +936,7 @@ function alertaCorta(t) {
   var d = document.createElement('div');
   d.style.cssText = 'position:fixed;left:12px;right:12px;bottom:16px;z-index:20;' +
     'background:var(--entra);color:#141B20;padding:13px;border-radius:12px;' +
-    'text-align:center;font-weight:600;font-size:14px';
+    'text-align:center;font-weight:600;font-size:16px';
   d.textContent = t;
   document.body.appendChild(d);
   setTimeout(function () { d.remove(); }, 3500);
